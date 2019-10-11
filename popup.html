@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="popup.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <script>
-        if ("geolocation" in navigator) {
-        console.log('API available');
-        navigator.geolocation.getCurrentPosition(function(position) {
-            do_something(position.coords.latitude, position.coords.longitude);
-        });
-        } else {
-        console.log('API not available');
-    }   
-    </script>
-
+    
     <h1>Welcome to WeatherMe</h1>
     <h2>Get a city's weather now!</h2>
     <h3>Enter city name:</h3>
     <input type= "text" id="amount"/>
     <input type= "submit" id="weather" value="Get Weather!">
+
 </body>
 </html>

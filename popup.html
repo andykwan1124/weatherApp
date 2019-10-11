@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        if ("geolocation" in navigator) {
+        console.log('API available');
+        navigator.geolocation.getCurrentPosition(function(position) {
+            do_something(position.coords.latitude, position.coords.longitude);
+        });
+        } else {
+        console.log('API not available');
+    }   
+    </script>
+
     <h1>Welcome to WeatherMe</h1>
     <h2>Get a city's weather now!</h2>
     <h3>Enter city name:</h3>

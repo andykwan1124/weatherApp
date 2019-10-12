@@ -27,7 +27,7 @@ function myInitCode() {
         lat = position.coords.latitude;
         console.log(position.coords.longitude);
         long = position.coords.longitude;
-        document.getElementById('btn1').addEventListener('click', onClick, false);
+        onClick();
         })
     } else {
         console.log('API not available');
@@ -37,18 +37,29 @@ function myInitCode() {
 }
 
 function onClick() { 
-    var div1 = document.createElement("div");
-    div1.textContent = lat;
-    document.body.appendChild(div1);
-    var div2 = document.createElement("div");
-    div2.textContent = long;
-    document.body.appendChild(div2);
+    var myLat = document.createElement("div");
+    myLat.textContent = lat;
+    document.body.appendChild(myLat);
+    var myLong = document.createElement("div");
+    myLong.textContent = long;
+    document.body.appendChild(myLong);
     $.getJSON(
-        "https://api.darksky.net/forecast/c486de8f81ddf8d7a67e10d28ec20a9f/49.1535231,-123.13546529999999",
+        "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/c486de8f81ddf8d7a67e10d28ec20a9f/49.1535231,-123.13546529999999?units=si",
         function(data) {
+            var currentTemp = document.createElement("div");
+            currentTemp.textContent = data.currently.apparentTemperature;
+            document.body.appendChild(currentTemp);
             console.log(data);
+            
+            const currentIcon = data.currently.icon.replace(/-/g, "_").toUpperCase();
+            console.log(currentIcon);
+            const skycons = new Skycons({color: "black"},
+                                        {"resizeClear": true})
+            skycons.add(document.getElementById("icon1"), Skycons[currentIcon]);
         })
 }
+
+
 
 
 

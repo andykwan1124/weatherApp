@@ -16,9 +16,10 @@ if( document.readyState !== 'loading' ) {
     });
 }
 
+var lat;
+var long;
+
 function myInitCode() {
-    var lat;
-    var long;
     if ("geolocation" in navigator) {
         console.log('API available');
         navigator.geolocation.getCurrentPosition(position => {
@@ -28,21 +29,20 @@ function myInitCode() {
         long = position.coords.longitude;
         document.getElementById('btn1').addEventListener('click', onClick, false);
         })
-
-        function onClick() { 
-            var div1 = document.createElement("div");
-            div1.textContent = lat;
-            document.body.appendChild(div1);
-            var div2 = document.createElement("div");
-            div2.textContent = long;
-            document.body.appendChild(div2);
-        }
-
     } else {
         console.log('API not available');
     }
     
     
+}
+
+function onClick() { 
+    var div1 = document.createElement("div");
+    div1.textContent = lat;
+    document.body.appendChild(div1);
+    var div2 = document.createElement("div");
+    div2.textContent = long;
+    document.body.appendChild(div2);
 }
 
 

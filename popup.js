@@ -43,6 +43,11 @@ function onClick() {
     var div2 = document.createElement("div");
     div2.textContent = long;
     document.body.appendChild(div2);
+    $.getJSON(
+        "https://api.darksky.net/forecast/c486de8f81ddf8d7a67e10d28ec20a9f/49.1535231,-123.13546529999999",
+        function(data) {
+            console.log(data);
+        })
 }
 
 

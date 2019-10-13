@@ -6,28 +6,26 @@
 //     check();
 // }
 
-if( document.readyState !== 'loading' ) {
-    console.log( 'document is already ready, just execute code here' );
-    myInitCode();
-} else {
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log( 'document was not ready, place code here' );
-        myInitCode();
-    });
-}
+// if( document.readyState !== 'loading' ) {
+//     console.log( 'document is already ready, just execute code here' );
+//     myInitCode();
+// } else {
+//     document.addEventListener('DOMContentLoaded', function () {
+//         console.log( 'document was not ready, place code here' );
+//         myInitCode();
+//     });
+// }
 
-var lat;
-var long;
 
 const myInitCode = () => {
     if ("geolocation" in navigator) {
         console.log('API available');
         navigator.geolocation.getCurrentPosition(position => {
         console.log(position.coords.latitude);
-        lat = position.coords.latitude;
+        var lat = position.coords.latitude;
         console.log(position.coords.longitude);
-        long = position.coords.longitude;
-        onClick();
+        var long = position.coords.longitude;
+        onClick(lat,long);
         })
     } else {
         console.log('API not available');
@@ -36,7 +34,7 @@ const myInitCode = () => {
     
 }
 
-const onClick = () => { 
+const onClick = (lat, long) => { 
     // var myLat = document.createElement("div");
     // myLat.textContent = lat;
     // document.body.appendChild(myLat);
@@ -59,6 +57,8 @@ const onClick = () => {
             skycons.play();
         })
 }
+
+myInitCode();
 
 
 

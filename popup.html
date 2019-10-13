@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="jquery-x.y.z.min.js"></script>
     <script src="skycons.js"></script>
+    <script src="popup.js" charset="utf-8"></script>
+    <script src="content.js" charset="utf-8"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <script src="popup.js" charset="utf-8"></script>
-    <script src="content.js" charset="utf-8"></script>
-    <h1>Welcome to WeatherMe</h1>
-    <canvas id="icon1" width="64" height="64"></canvas>
     
+    <div id="content-box">
+        <div id="title">WeatherMe</div>
+        <div id="icon-box">
+            <canvas id="icon1" width="50" height="50"></canvas>
+        </div>
+        <div id="details-box">
+            <div class="category" id="temperature">Current Temperature</div>
+            <div class="data" id="tempData"></div>
+        </div>
+        
+    </div>
+    <a href="https://darksky.net/forecast/" id="darksky">Powered by Dark sky</a>
 </body>
 </html>

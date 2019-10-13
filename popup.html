@@ -3,17 +3,21 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="load.css">
     <script src="jquery-x.y.z.min.js"></script>
+    <script src="loader.js"></script>
     <script src="skycons.js"></script>
     <script src="popup.js" charset="utf-8"></script>
-    <script src="content.js" charset="utf-8"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="load-box">
+        <span class="loader"><span class="loader-inner"></span></span>
+        <div id="loadingMsg">LOADING</div>
+    </div>
+            
     <div id="content-box">
         <div id="title">WeatherMe</div>
         <div id="icon-box">
@@ -25,6 +29,9 @@
         </div>
         
     </div>
+
+    
+    
     <a href="https://darksky.net/forecast/" id="darksky">Powered by Dark sky</a>
 </body>
 </html>

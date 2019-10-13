@@ -19,7 +19,7 @@ if( document.readyState !== 'loading' ) {
 var lat;
 var long;
 
-function myInitCode() {
+const myInitCode = () => {
     if ("geolocation" in navigator) {
         console.log('API available');
         navigator.geolocation.getCurrentPosition(position => {
@@ -36,7 +36,7 @@ function myInitCode() {
     
 }
 
-function onClick() { 
+const onClick = () => { 
     // var myLat = document.createElement("div");
     // myLat.textContent = lat;
     // document.body.appendChild(myLat);
@@ -44,16 +44,16 @@ function onClick() {
     // myLong.textContent = long;
     // document.body.appendChild(myLong);
     $.getJSON(
-        "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/c486de8f81ddf8d7a67e10d28ec20a9f/49.1535231,-123.13546529999999?units=si",
+        `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/c486de8f81ddf8d7a67e10d28ec20a9f/${lat},${long}?units=si`,
         function(data) {
             var currentTemp = document.createElement("div");
             currentTemp.textContent = data.currently.apparentTemperature + `°C`;
             document.getElementById("tempData").appendChild(currentTemp);
             console.log(data);
         
-            const currentIcon = data.currently.icon.replace(/-/g, "_").toUpperCase();
+            var currentIcon = data.currently.icon.replace(/-/g, "_").toUpperCase();
             console.log(currentIcon);
-            const skycons = new Skycons({color: "black"},
+            var skycons = new Skycons({color: "black"},
                                         {"resizeClear": true})
             skycons.add(document.getElementById("icon1"), Skycons[currentIcon]);
             skycons.play();

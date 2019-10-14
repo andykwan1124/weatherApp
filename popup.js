@@ -76,6 +76,21 @@ const findTime = () => {
 
     for (var i = 1; i <= 3; i++) {
         var futureTime = document.getElementById(`${i}Time`);
+        var theTime = hours+i;
+        
+        if (theTime >= 12) {
+            if (suffix == "AM") {
+                suffix = "PM";
+            } else {
+                suffix = "AM";
+            }
+            theTime = theTime - 12;
+        }
+
+        if (theTime == 0) {
+            theTime = 12;
+        }
+
         futureTime.textContent = `${hours+i}:00 ${suffix}`
     }
 }

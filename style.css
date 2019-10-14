@@ -4,7 +4,7 @@
 
 body {
     width: 300px;
-    height: 250px; 
+    height: 180px; 
     background-image: url(images/clouds.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -17,15 +17,17 @@ body:hover {
     height: 350px; 
 }
 
-body:hover #content-box {
-    transform: scale(0.8);
-}
 
 #content-box {
     border-radius: 25px;
     border: 5px solid white;
     text-align: center;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
+    width: 250px;
+    height: 165px;
+    top: 50%;
+    left: 50%;
+    margin: auto;
 }
 
 #title {
@@ -72,7 +74,7 @@ body:hover #content-box {
     color: #444444;
     bottom: 8px;
     right: 16px;
-    font-size: 1;
+    font-size: 0.1;
 }
 
 #currTime {

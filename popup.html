@@ -25,13 +25,37 @@
         </div>
         <div id="details-box">
             <div class="category" id="temperature">Current Temperature</div>
-            <div class="data" id="tempData"></div>
+            <div class="data" id="tempData" currentTemp></div>
         </div>
         
     </div>
 
+    <div id="hourlyBox">
+        <div class="hourDetail" id="firstHour">
+            <div class="time" id="1Time" firstTime></div>
+            <canvas class="icons" id="1icon" width="30" height="30"></canvas>
+            <div class="description">Temperature</div>
+            <div class="tempData" id="1Data" firstData></div>
+        </div>
+
+        <div class="hourDetail bordered" id="secondHour">
+            <div class="time" id="2Time" secondTime></div>
+            <canvas class="icons" id="2icon" width="30" height="30"></canvas>
+            <div class="description">Temperature</div>
+            <div class="tempData" id="2Data" secondData></div>
+        </div>
+
+        <div class="hourDetail" id="thirdHour">
+                <div class="time" id="3Time" thirdTime></div>
+                <canvas class="icons" id="3icon" width="30" height="30"></canvas>
+                <div class="description">Temperature</div>
+                <div class="tempData" id="3Data" thirdData></div>
+            </div>
+        
+    </div>
+
     
-    
+    <div id="currTime" currTime></div>
     <a href="https://darksky.net/forecast/" id="darksky">Powered by Dark sky</a>
 </body>
 </html>

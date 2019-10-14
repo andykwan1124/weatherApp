@@ -6,14 +6,26 @@ body {
     width: 300px;
     height: 250px; 
     background-image: url(images/clouds.jpg);
-    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    transition: height 0.2s ease-in-out;
+}
+
+body:hover {
+    width: 300px;
+    height: 350px; 
+}
+
+body:hover #content-box {
+    transform: scale(0.8);
 }
 
 #content-box {
     border-radius: 25px;
     border: 5px solid white;
     text-align: center;
-    
+    transition: 0.3s ease-in-out;
 }
 
 #title {
@@ -28,7 +40,13 @@ body {
 
 .category {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.7rem;
+    color: #777777;
+}
+
+.description {
+    font-weight: bold;
+    font-size: 0.7rem;
     color: #777777;
 }
 
@@ -57,6 +75,14 @@ body {
     font-size: 1;
 }
 
+#currTime {
+    position: absolute;
+    color: #444444;
+    bottom: 8px;
+    left: 16px;
+    font-size: 1.5;
+}
+
 .load-box {
     width: 300px;
     height: 250px;
@@ -74,3 +100,41 @@ body {
     font-size: 1rem;
 
 }
+
+#hourlyBox {
+    transition: 0.3s;
+    text-align: center;
+    opacity: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body:hover #hourlyBox {
+    margin-top: 20px;
+    opacity: 1;
+    text-align: center;
+}
+
+.hourDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.hourDetail.bordered {
+    border-left: 3px solid #777777;
+    border-right: 3px solid #777777;
+}
+
+.icons {
+    margin-top: 10px;
+}
+
+.tempData {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+

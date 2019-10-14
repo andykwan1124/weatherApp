@@ -57,42 +57,27 @@ const findTime = () => {
     var currentTime = new Date();
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
-    var suffix = "AM";
+    var seconds = currentTime.getSeconds();
 
-    if (hours >= 12) {
-        suffix = "PM";
-        hours = hours - 12;
-    }
-
-    if (hours == 0) {
-        hours = 12;
-    }
     if (minutes < 10) {
         minutes = "0" + minutes;
     }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
 
     var currTime = document.querySelector('[currTime]');
-    currTime.textContent = `${hours}:${minutes} ${suffix}`;
+    currTime.textContent = `${hours}:${minutes}:${seconds}`;
 
     for (var i = 1; i <= 3; i++) {
         var futureTime = document.getElementById(`${i}Time`);
         var theTime = hours+i;
-        var futureSuffix;
-        
-        if (theTime >= 12) {
-            if (suffix == "AM") {
-                futureSuffix = "PM";
-            } else {
-                futureSuffix = "AM";
-            }
-            theTime = theTime - 12;
+
+        if (theTime < 10) {
+            theTime = "0" + theTime;
         }
 
-        if (theTime == 0) {
-            theTime = 12;
-        }
-
-        futureTime.textContent = `${theTime}:00 ${futureSuffix}`
+        futureTime.textContent = `${theTime}:00`
     }
 }
 

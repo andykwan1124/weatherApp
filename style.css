@@ -17,6 +17,10 @@ body:hover {
     height: 350px; 
 }
 
+body:hover #content-box {
+    transform: scale(0.9);
+}
+
 
 #content-box {
     border-radius: 25px;
@@ -104,7 +108,7 @@ body:hover {
 }
 
 #hourlyBox {
-    transition: 0.3s;
+    transition: 0.2s ease-in;
     text-align: center;
     opacity: 0;
     display: flex;

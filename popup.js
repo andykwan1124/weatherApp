@@ -77,12 +77,13 @@ const findTime = () => {
     for (var i = 1; i <= 3; i++) {
         var futureTime = document.getElementById(`${i}Time`);
         var theTime = hours+i;
+        var futureSuffix;
         
         if (theTime >= 12) {
             if (suffix == "AM") {
-                suffix = "PM";
+                futureSuffix = "PM";
             } else {
-                suffix = "AM";
+                futureSuffix = "AM";
             }
             theTime = theTime - 12;
         }
@@ -91,7 +92,7 @@ const findTime = () => {
             theTime = 12;
         }
 
-        futureTime.textContent = `${hours+i}:00 ${suffix}`
+        futureTime.textContent = `${theTime}:00 ${futureSuffix}`
     }
 }
 

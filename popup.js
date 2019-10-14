@@ -1,5 +1,6 @@
 const myInitCode = () => {
     if ("geolocation" in navigator) {
+        
         console.log('API available');
         navigator.geolocation.getCurrentPosition(position => {
         console.log(position.coords.latitude);
@@ -17,9 +18,17 @@ const myInitCode = () => {
 }
 
 const onClick = (lat, long) => { 
+    let loader =`<div class="load-box">
+                    <span class="loader"><span class="loader-inner"></span></span>
+                    <div id="loadingMsg">LOADING</div>
+                </div>`;
+            
+    document.getElementById('hoverWrap').innerHTML = loader;
+
     $.getJSON(
         `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/c486de8f81ddf8d7a67e10d28ec20a9f/${lat},${long}?units=si`,
         function(data) {
+            
             var currentTemp = document.querySelector('[currentTemp]');
             currentTemp.textContent = data.currently.apparentTemperature + `°C`;
             console.log(data);
@@ -50,7 +59,11 @@ const onClick = (lat, long) => {
                 var futureTemp = document.getElementById(`${i}Data`);
                 futureTemp.textContent = data.hourly.data[i].temperature + `°C`;
             }
+
+            let doneLoading = `<div id="hoverBox">Hover for more info!</div>`
+            document.getElementById('hoverWrap').innerHTML = doneLoading;
         })
+
 }
 
 const findTime = () => {
@@ -72,6 +85,10 @@ const findTime = () => {
     for (var i = 1; i <= 3; i++) {
         var futureTime = document.getElementById(`${i}Time`);
         var theTime = hours+i;
+
+        if (theTime >= 24) {
+            theTime = theTime - 24;
+        }
 
         if (theTime < 10) {
             theTime = "0" + theTime;

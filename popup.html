@@ -7,16 +7,12 @@
     <script src="jquery-x.y.z.min.js"></script>
     <script src="loader.js"></script>
     <script src="skycons.js"></script>
-    <script src="popup.js" charset="utf-8"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <div class="load-box">
-        <span class="loader"><span class="loader-inner"></span></span>
-        <div id="loadingMsg">LOADING</div>
-    </div>
             
     <div id="content-box">
         <div id="title">WeatherMe</div>
@@ -27,12 +23,9 @@
             <div class="category" id="temperature">Current Temperature</div>
             <div class="data" id="tempData" currentTemp></div>
         </div>
-        
     </div>
 
-    <div id="hoverWrap">
-        <div id="hoverBox">Hover for more info!</div>
-    </div>
+    <div id="hoverWrap"></div>
 
     <div id="hourlyBox">
         <div class="hourDetail" id="firstHour">
@@ -50,16 +43,16 @@
         </div>
 
         <div class="hourDetail" id="thirdHour">
-                <div class="time" id="3Time" thirdTime></div>
-                <canvas class="icons" id="3icon" width="30" height="30"></canvas>
-                <div class="description">Temperature</div>
-                <div class="tempData" id="3Data" thirdData></div>
-            </div>
+            <div class="time" id="3Time" thirdTime></div>
+            <canvas class="icons" id="3icon" width="30" height="30"></canvas>
+            <div class="description">Temperature</div>
+            <div class="tempData" id="3Data" thirdData></div>
+        </div>
         
     </div>
 
-    
     <div id="currTime" currTime></div>
     <a href="https://darksky.net/forecast/" id="darksky">Powered by Dark sky</a>
+    <script src="popup.js" charset="utf-8"></script>
 </body>
 </html>

@@ -10,8 +10,12 @@ body {
     background-attachment: fixed;
     background-position: top center;
     transition: height 0.2s ease-in-out;
-    display: none;
     
+    
+}
+
+#fade {
+    display: none;
 }
 
 body:hover {
@@ -190,9 +194,7 @@ body:hover #searchIcon {
     transform: translate(-50%, -50%);
 }
 
-body {
-    background-color:white;
-}
+
 
 
 

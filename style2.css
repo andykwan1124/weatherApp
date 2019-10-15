@@ -9,6 +9,10 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: top center;
+    
+}
+
+#fade {
     display: none;
 }
 
@@ -92,6 +96,3 @@ body {
     opacity: 0.3;
 }
 
-body {
-    background-color:white;
-  }

@@ -190,6 +190,10 @@ body:hover #searchIcon {
     transform: translate(-50%, -50%);
 }
 
+body {
+    background-color:white;
+}
+
 
 
 

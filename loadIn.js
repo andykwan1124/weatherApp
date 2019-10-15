@@ -1,3 +1,3 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    $("body").fadeIn(1000);   
+    $("body").fadeIn(1200);   
 });

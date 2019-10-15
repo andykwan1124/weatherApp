@@ -18,8 +18,6 @@ const myInitCode = () => {
     
 }
 
-var userData;
-
 const onClick = (lat, long) => {
     let loader =`<div class="load-box">
                     <span class="loader"><span class="loader-inner"></span></span>
@@ -31,10 +29,7 @@ const onClick = (lat, long) => {
     $.getJSON(
         `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/c486de8f81ddf8d7a67e10d28ec20a9f/${lat},${long}?units=si`,
         function(data) {
-            userData = data;
-            newUser.data = userData;
-            console.log(newUser.data);
-            console.log(userData);
+            localStorage.setItem('userData', JSON.stringify(data));
             
             var currentTemp = document.querySelector('[currentTemp]');
             currentTemp.textContent = data.currently.apparentTemperature + `°C`;
@@ -75,6 +70,7 @@ const onClick = (lat, long) => {
             
         })
         
+
 }
 
 const findTime = () => {

@@ -1,0 +1,5 @@
+var newUser = {
+    'data': 'null',
+}
+
+

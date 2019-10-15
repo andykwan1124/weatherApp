@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
         <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style2.css">
         <link rel="stylesheet" href="load.css">
         <script src="jquery-x.y.z.min.js"></script>
         <script src="skycons.js"></script>
+        <script src="user.js" charset="utf-8"></script>
         <script src="loadIn.js" type="text/javascript"></script>
         
         <meta charset="UTF-8">
@@ -13,6 +14,60 @@
         <title>Document</title>
 </head>
 <body>
-    
+    <div id="dailyBox">
+        <div class="dayBox" id="0Day">
+            <div class="dayData" id="0dayData">a</div>
+            <canvas id="day0icon" width="25" height="25"></canvas>
+            <div class="dayTempDes">Temperature:</div>
+            <div class="dayTempData" id="0TempData"></div>
+        </div>
+
+        <div class="dayBox" id="1Day">
+            <div class="dayData" id="1dayData">b</div>
+            <canvas id="day1icon" width="25" height="25"></canvas>
+            <div class="dayTempDes">Temperature:</div>
+            <div class="dayTempData" id="1TempData"></div>
+        </div>
+
+        <div class="dayBox" id="2Day">
+            <div class="dayData" id="2dayData"></div>
+            <canvas id="day2icon" width="25" height="25"></canvas>
+            <div class="dayTempDes">Temperature:</div>
+            <div class="dayTempData" id="2TempData"></div>
+        </div>
+
+        <div class="dayBox" id="3Day">
+            <div class="dayData" id="3dayData"></div>
+            <canvas id="day3icon" width="25" height="25"></canvas>
+            <div class="dayTempDes">Temperature:</div>
+            <div class="dayTempData" id="3TempData"></div>
+        </div>
+
+        <div class="dayBox" id="4Day">
+            <div class="dayData" id="4dayData"></div>
+            <canvas id="day4icon" width="25" height="25"></canvas>
+            <div class="dayTempDes">Temperature:</div>
+            <div class="dayTempData" id="4TempData"></div>
+        </div>
+
+        <div class="dayBox" id="5Day">
+            <div class="dayData" id="5dayData"></div>
+            <canvas id="day5icon" width="25" height="25"></canvas>
+            <div class="dayTempDes">Temperature:</div>
+            <div class="dayTempData" id="5TempData"></div>
+        </div>
+
+        <div class="dayBox" id="6Day">
+            <div class="dayData" id="6dayData">e</div>
+            <canvas id="day6icon" width="25" height="25"></canvas>
+            <div class="dayTempDes">Temperature:</div>
+            <div class="dayTempData" id="6TempData"></div>
+        </div>
+
+    </div>
+
+    <div id="currTime" currTime></div>
+    <a href="https://darksky.net/forecast/" id="darksky">Powered by Dark sky</a>
+    <script src="popup2.js" charset="utf-8"></script>
 </body>
 </html>

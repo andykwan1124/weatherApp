@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+    <script src="jquery-x.y.z.min.js"></script>
+    <script src="loadIn.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="load.css">
-    <script src="jquery-x.y.z.min.js"></script>
-    <script src="loader.js"></script>
+    
     <script src="skycons.js"></script>
+    
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-            
+  
     <div id="content-box">
         <div id="title">WeatherMe</div>
         <div id="icon-box">
@@ -50,6 +52,10 @@
         </div>
         
     </div>
+     
+    <a href="popup2.html">
+    <img id="searchIcon" src="images/searchIcon.png" class="transition"></img>
+    </a>
 
     <div id="currTime" currTime></div>
     <a href="https://darksky.net/forecast/" id="darksky">Powered by Dark sky</a>

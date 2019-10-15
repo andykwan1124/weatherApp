@@ -17,7 +17,7 @@ const myInitCode = () => {
     
 }
 
-const onClick = (lat, long) => { 
+const onClick = (lat, long) => {
     let loader =`<div class="load-box">
                     <span class="loader"><span class="loader-inner"></span></span>
                     <div id="loadingMsg">LOADING</div>
@@ -62,6 +62,10 @@ const onClick = (lat, long) => {
 
             let doneLoading = `<div id="hoverBox">Hover for more info!</div>`
             document.getElementById('hoverWrap').innerHTML = doneLoading;
+
+            
+
+            
         })
 
 }
